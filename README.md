@@ -5,10 +5,10 @@ This tool works in a unixy way, doing one thing fairly well and being chainable 
 
 You can watch your logs
 
-tail -f /var/log/syslog | ./webtail
+    tail -f /var/log/syslog | ./webtail
 
 You can watch the clock
 
-while true ;  do date  ; sleep 1 ; done|./webtail
+    while true ;  do date  ; sleep 1 ; done|./webtail
 
 To connect to it you will need a little bit of javascript on a web page, example file also provided.
