@@ -1,0 +1,33 @@
+<html>
+<body>
+<h1>WebTail</h1>
+This tool allows you to monitor in real time any command line application that produces output.
+<pre>$ tail -f /var/log/syslog | ./webtail</pre>
+
+<script type="text/javascript">
+var loc = window.location, new_uri;
+if (loc.protocol === "https:") {
+    new_uri = "wss:";
+} else {
+    new_uri = "ws:";
+}
+new_uri += "//" + loc.host;
+new_uri += ":9999/";
+
+var ws = new WebSocket(new_uri);
+
+ws.onopen = function() {
+ws.onmessage = function(evt) { onMessage(evt) };
+function onMessage(evt) { writeToScreen(evt.data);  }
+};
+function writeToScreen(message) { 
+item=document.createElement("li");
+item.innerHTML=message;
+output.appendChild(item); 
+}
+
+</script>
+<ul id="output"></ul>
+</body>
+</html>
+
