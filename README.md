@@ -14,3 +14,6 @@ You can watch the clock
 To connect to it you will need a little bit of javascript on a web page, example file also provided.
 
 See it in action at http://givehugs.net/
+
+
+Outline socket server structure was from https://gist.github.com/jkp/3136208
