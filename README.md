@@ -17,3 +17,7 @@ See it in action at http://givehugs.net/
 
 
 Outline socket server structure was from https://gist.github.com/jkp/3136208
+
+If you are having problems with a lack of output it might be buffering, try just running it without piping data in, you can then just type into it and press ctrl+d to send an end of file signal. If that works fine then the pipe is buffering things, you can install the unbuffer command from the expect-dev package, then put unbuffer in front of the thing that prints the output, for example:
+    $ sudo apt-get install expect-dev
+    $ while true; do unbuffer date; sleep 1; done|./webtail
